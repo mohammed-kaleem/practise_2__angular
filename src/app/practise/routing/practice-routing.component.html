@@ -1,0 +1,44 @@
+<!-- <div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+      <ul class="nav nav-tabs">
+        <li role="presentation" routerLinkActive="active" 
+        [routerLinkActiveOptions]="{exact:true}"
+        ><a href="#" routerLink="/" >Home</a></li>
+        <li role="presentation" routerLinkActive="active"><a href="#" routerLink="/servers" >Servers</a></li>
+        <li role="presentation" routerLinkActive="active"><a href="#" routerLink="/users" >Users</a></li>
+      </ul>
+    </div>
+  </div>
+</div> -->
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+      <form (ngSubmit)="onSubmit()" #f="ngForm"  >
+        <div id="user-data" ngModelGroup="userData" >
+          <div class="form-group">
+            <label for="username">Username</label>
+            <input type="text" id="username" class="form-control" name="userName" ngModel >
+          </div>
+          <button class="btn btn-default" type="button">Suggest an Username</button>
+          <div class="form-group">
+            <label for="email">Mail</label>
+            <input type="email" id="email" class="form-control" name="emailName" ngModel>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="secret">Secret Questions</label>
+          <select id="secret" class="form-control" name="secretName" ngModel>
+            <option value="pet">Your first Pet?</option>
+            <option value="teacher">Your first teacher?</option>
+          </select>
+        </div>
+        <div class="radio-btn" *ngFor="let gender of genders">
+          <label><input type="radio" name="gender" ngModel [value]="gender">{{gender}} </label>
+        </div>
+        <button class="btn btn-primary" type="submit">Submit</button>
+      </form>
+    </div>
+  </div>
+</div>
